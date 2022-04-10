@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 
+import com.example450v2.demo450v2.Entity.Authors;
 import com.example450v2.demo450v2.Entity.Publications;
 import com.example450v2.demo450v2.service.PaperService; 
 @RestController
@@ -29,6 +30,10 @@ public class PapperController {
     @RequestMapping(value = "/paper/title/{title}", method = RequestMethod.GET)
     public List<Publications> getPublicationByTitle(@PathVariable("title") String title) {
         return paperService.getPublicationByTitle(title);
+    }
+    @RequestMapping(value = "/paper/author/{id}", method = RequestMethod.GET)
+    public List<Authors> getPublicationByAuthor(@PathVariable("id") String id) {
+        return paperService.findAuthorById(id);
     }
 
     // @RequestMapping(value = "/paper", method = RequestMethod.POST)
