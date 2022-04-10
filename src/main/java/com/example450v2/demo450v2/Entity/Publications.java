@@ -1,16 +1,19 @@
 package com.example450v2.demo450v2.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
+import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
 @Entity
-@DiscriminatorColumn(name = "PUBLICATIONS")
+@Table(name = "PUBLICATIONS")
 public class Publications {
     @Id
     private String PUBLICATIONID;
@@ -44,8 +47,12 @@ public class Publications {
     public void setSUMMARY(String sUMMARY) {
         SUMMARY = sUMMARY;
     }
+    @Column(name = "TITLE")
     private String TITLE;
+    @Column(name = "YEAR")
     private String YEAR;
+    @Column(name = "TYPE")
     private String TYPE;
+    @Column(name = "SUMMARY")
     private String SUMMARY;
 }

@@ -8,6 +8,7 @@ import com.example450v2.demo450v2.Repo.PublicationRepository;
 import java.util.ArrayList;    
 import org.springframework.beans.factory.annotation.Autowired;    
 import org.springframework.stereotype.Service;  
+@Service
 public class PaperService {
     @Autowired
     private PublicationRepository publicationRepository;
@@ -17,6 +18,9 @@ public class PaperService {
     }
     public Optional<Publications> getPublication(String id) {
         return publicationRepository.findById(id);
+    }
+    public List<Publications> getPublicationByTitle(String title) {
+        return publicationRepository.findAllByTitle(title);
     }
     public void addPublication(Publications publication) {
         publicationRepository.save(publication);
