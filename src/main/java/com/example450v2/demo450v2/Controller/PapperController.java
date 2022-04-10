@@ -14,7 +14,7 @@ import com.example450v2.demo450v2.service.PaperService;
 public class PapperController {
     @Autowired
     private PaperService paperService;
-    @RequestMapping(value = "/paper", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Publications> getAllPublications() {
         return paperService.getAllPublications();
     }
