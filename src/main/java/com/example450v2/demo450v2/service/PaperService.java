@@ -38,4 +38,7 @@ public class PaperService {
     public List<Authors> findAuthorById(String id){
         return authorsRepo.findAllById(id);
     }
+    public List<Authors> getAllAuthors() {
+        return (List<Authors>) authorsRepo.findAll();
+    }
 }
