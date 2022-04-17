@@ -36,6 +36,10 @@ public class PapperController {
     public List<Authors> getPublicationByAuthor(@PathVariable("id") String id) {
         return paperService.findAuthorById(id);
     }
+    @RequestMapping(value = "/paper/author", method = RequestMethod.GET)
+    public List<Authors> getAllAuthors() {
+        return paperService.getAllAuthors();
+    }
 
     // @RequestMapping(value = "/paper", method = RequestMethod.POST)
     // public void addPublication(@RequestBody Publications publication) {
